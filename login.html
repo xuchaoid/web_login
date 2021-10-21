@@ -5,11 +5,85 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>大事件</title>
+    <!-- 导入layui的css样式引入layui的组件快速开发模板结构 -->
+    <link rel="stylesheet" href="assets/lib/layui/css/layui.css">
+    <!-- 引入自己的css样式 -->
+    <link rel="stylesheet" href="assets/css/login.css">
 </head>
 
 <body>
+    <!-- layui  使用layui辅助开发更快速  如果使用layui则需要引入它的样式然后 调用layui-main 这个属性设置版心 -->
+    <!-- 头部log区域 -->
+    <div class="layui-main">
+        <img src="assets/images/logo.png" alt="">
+    </div>
+    <!-- 登录注册模块 -->
+    <div class="loginAndRegBox">
+        <div class="title-box"></div>
+        <!-- 登录框 -->
+        <div class="login-box ">
+            <form class="layui-form" id="form_login">
+                <!-- 用户名 -->
+                <!-- layui的表单验证规则为给需要验证的表单添加lay-verify=""属性 而这个属性的生效是需要引入layui的js文件layui.all.js才可以让这个属性生效 -->
+                <!-- 一个表单应用多个校验规则的化在lay-verify=""的值之间用|分开 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input" />
+                </div>
+                <!-- 密码框 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="password" required lay-verify="required|pass" placeholder="请输入密码" autocomplete="off" class="layui-input" />
+                </div>
+                <!-- 登录按钮 -->
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit>登录</button>
 
+                </div>
+                <div class="layui-form-item links">
+                    <a href="javascript:;" id="link_reg">去注册账号</a>
+                </div>
+            </form>
+        </div>
+        <!-- 注册框 -->
+        <div class="reg-box">
+            <form class="layui-form" id="form_reg">
+                <!-- 用户名 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input" />
+                </div>
+                <!-- 密码框 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="password" required lay-verify="required|pass" placeholder="请输入密码" autocomplete="off" class="layui-input" />
+                </div>
+                <!-- 确认密码框 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="repassword" required lay-verify="required|pass|repass" placeholder="再次确认密码" autocomplete="off" class="layui-input" />
+                </div>
+                <!-- 登录按钮 -->
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit>注册</button>
+
+                </div>
+                <div class="layui-form-item links">
+                    <a href="javascript:;" id="link_login">去登录</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <!-- 引入layui的js文件用于layui的属性和方法的生效使用 -->
+    <script src="assets/lib/layui/layui.all.js"></script>
+    <!-- 使用JQ获取页面元素简单一点所以引入jq文件 -->
+    <script src="assets/lib/jquery.js"></script>
+    <!-- 引入JQ中有一个方法$.ajaxPrefilter的js文件  依赖于jq文件所有只能在其下，并且要在自己的js文件上面因为要在真正的请求之前先生效 -->
+    <script src="assets/js/baseAPI.js"></script>
+    <!-- 引入自己的js文件  自己的js需要使用layui的一些属性和方法所以只能放在下面  注意顺序 -->
+    <script src="assets/js/login.js"></script>
 </body>
 
 </html>
