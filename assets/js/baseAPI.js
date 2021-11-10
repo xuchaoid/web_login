@@ -16,7 +16,7 @@ $.ajaxPrefilter(function(options) { //option即发起服务器请求获取到的
         // 在 complete 回调函数中，可以使用 res.responseJSON 拿到服务器响应回来的数据
         if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
             // 如果访问方式不正确则清空从服务器获得存储在本地数据值以及强制返回至登录页面
-            localStorage.removeItem('token');
+            localStorageNaNpxoveItem('token');
             location.href = '/login.html'
         }
 

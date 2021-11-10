@@ -1,6 +1,6 @@
 // 使用JQ的js的入口函数
 $(function() {
-        // 调用函数获取用户基本信息
+        // 调用函数获取用户基本信息  渲染页面
         getUserInfo()
             // 获取layui的layer的对象
         var layer = layui.layer
@@ -15,7 +15,7 @@ $(function() {
             })
         })
     })
-    // 向服务器发起请求获取用户基本信息
+    // 向服务器发起请求获取用户基本信息  并渲染页面
 function getUserInfo() {
     $.ajax({
         type: 'GET',
