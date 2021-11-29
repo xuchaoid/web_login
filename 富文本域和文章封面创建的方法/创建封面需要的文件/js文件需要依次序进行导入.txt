@@ -1,0 +1,1 @@
+先导入jq的然后cropper的最后是jquery-cropper的

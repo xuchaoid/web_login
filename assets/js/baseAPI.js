@@ -2,6 +2,7 @@
 $.ajaxPrefilter(function(options) { //option即发起服务器请求获取到的请求信息然后在这个信息中给url拼接上根路径就可以发起真正的请求了
     // 在发起真正的 Ajax 请求之前，统一给所有请求接口拼接请求的根路径
     options.url = 'http://api-breakingnews-web.itheima.net' + options.url
+        // options.url = 'http://www.liulongbin.top:3007' + options.url
         // console.log(options.url); 
         // 统一为有权限的接口添加请求头   只为需要权限访问的接口添加
     if (options.url.indexOf('/my') !== -1) {

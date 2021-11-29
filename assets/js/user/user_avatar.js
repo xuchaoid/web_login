@@ -3,7 +3,7 @@ $(function() {
         // 实现用户头像区域的头像裁剪功能
         // 1.1 获取裁剪区域的 DOM 元素
     var $image = $('#image')
-        // 1.2 配置选项
+        // 1.2 裁剪区域配置选项设置
     const options = {
         // 纵横比
         aspectRatio: 1,
@@ -11,7 +11,7 @@ $(function() {
         preview: '.img-preview'
     }
 
-    // 1.3 创建裁剪区域
+    // 1.3 创建裁剪区域   使用cropper方法
     $image.cropper(options)
 
     // 给上传按钮绑定点击事件然后给文件选择框添加模拟手动点击事件
@@ -20,7 +20,7 @@ $(function() {
         })
         // 实现头像替换文件选择则需要给上传文件表单添加使用change事件选择事件实现选择文件上传
     $('#file').on('change', function(e) {
-            console.log(e); //获得选取的文件对象  事件对象e可以输出选择的文件
+            //console.log(e); //获得选取的文件对象  事件对象e可以输出选择的文件
             // e.target.files  即选择的文件的个数和文件数量可以通过数组的方式选中选择的第几个文件
             var filelist = e.target.files
             if (filelist.length === 0) {
